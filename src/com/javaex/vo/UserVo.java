@@ -8,10 +8,16 @@ public class UserVo {
 	private String password;
 	private String name;
 	private String gender;
+	private String content;
 	
 	//생성자
 	public UserVo () {}
 	
+	public UserVo (String id, String password,String content) {
+		this.id = id;
+		this.password = password;
+		this.content = content;
+	}
 	public UserVo(String id, String password, String name, String gender) {
 		this.id = id;
 		this.password = password;

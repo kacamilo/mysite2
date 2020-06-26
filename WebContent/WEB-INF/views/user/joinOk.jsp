@@ -27,7 +27,7 @@
 
 		<div id="nav">
 			<ul>
-				<li><a href="">방명록</a></li>
+				<li><a href="/mysite2/user?action=addList">방명록</a></li>
 				<li><a href="">갤러리</a></li>
 				<li><a href="">게시판</a></li>
 				<li><a href="">입사지원서</a></li>
@@ -45,9 +45,9 @@
             	<h3>회원가입</h3>
             	<div id="location">
             		<ul>
-            			<li>홈</li>
+            			<li><a href="/mysite2/main">홈</a></li>
             			<li>회원</li>
-            			<li class="last">회원가입</li>
+            			<li class="last"><a href="/mysite2/user?action=joinForm">회원가입</a></li>
             		</ul>
             	</div>
                 <div class="clear"></div>

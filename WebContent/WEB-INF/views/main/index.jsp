@@ -20,7 +20,7 @@
 
 		<div id="nav">
 			<ul>
-				<li><a href="">방명록</a></li>
+				<li><a href="/mysite2/user?action=addList">방명록</a></li>
 				<li><a href="">갤러리</a></li>
 				<li><a href="">게시판</a></li>
 				<li><a href="">입사지원서</a></li>
@@ -42,7 +42,7 @@
 				<div id="greetings">
 					<p class="text-xlarge">
 						<span class="bold">안녕하세요!!<br>
-						강한솔의 MySite에 오신 것을 환영합니다.<br>
+						강한솔 의 MySite에 오신 것을 환영합니다.<br>
 						<br>
 						이 사이트는 웹 프로그램밍 실습과제 예제 사이트입니다.<br>
 						</span>
@@ -55,7 +55,7 @@
 						<br>
 						(자유롭게 꾸며보세요!!)<br>
 						<br><br>
-						<a class="" href="">[방명록에 글 남기기]</a>
+						<a class="" href="/mysite2/user?action=addList">[방명록에 글 남기기]</a>
 					</p>	
 				</div>
 				<!-- //greetings -->

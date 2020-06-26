@@ -107,6 +107,21 @@ public class UserController extends HttpServlet {
 			svo.setName(name);
 			
 			WebUtil.redirect(request, response, "/mysite2/main");
+		} else if ("addList".equals(action)) {
+			System.out.println("addList");
+			
+			String name = request.getParameter("name");
+			String password = request.getParameter("password");
+			String content = request.getParameter("content");
+			
+			WebUtil.forward(request, response, "/WEB-INF/views/guestbook/addList.jsp");
+			
+		} else if ("deleteForm".equals(action)) {
+			System.out.println("deleteForm");
+			
+			
+			WebUtil.forward(request, response, "/WEB-INF/views/guestbook/deleteForm.jsp");
+			
 		}
 		
 	}

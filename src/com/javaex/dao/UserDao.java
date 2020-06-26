@@ -184,6 +184,47 @@ public class UserDao {
 			   
 			   return count;
 		   }
+		 //방명록 리스트 추가
+			// 로그인한 사용자 가져오기
+		   /*
+			   public UserVo getUser(int no) {
+			      UserVo vo = null ;
+			      
+			      getConnection();
+			      
+			      try {
+			         String query = ""; // 쿼리문 문자열만들기, ? 주의
+			            query += " select no, id, password, name, gender ";
+			            query += " from users ";
+			            query += " where no = ?";
+			            
+			            pstmt = conn.prepareStatement(query); // 쿼리로 만들기
+			            
+			            pstmt.setInt(1, no); // ?(물음표) 중 1번째, 순서중요
+			         
+			            rs = pstmt.executeQuery();
+			            
+			            //4.결과처리
+			            while(rs.next()) {
+			               int rNo = rs.getInt("no");
+			               String id = rs.getString("id");
+			               String password = rs.getString("password");
+			               String name = rs.getString("name");
+			               String gender = rs.getString("gender");
+			               
+			               vo = new UserVo(rNo, id, password, name, gender);
+			            }
+			      
+			      } catch (SQLException e) {
+			         System.out.println("error:" + e);
+			      }
+
+					close();
+					return vo;
+		
+				}	
+				*/
+			   
 	}
 	
 	
