@@ -16,7 +16,7 @@
 
 		<div id="header">
 			<h1>
-				<a href="">MySite</a>
+				<a href="/mysite2/main">MySite</a>
 			</h1>
 
 			<ul>
@@ -38,25 +38,19 @@
 		</div>
 		<!-- //nav -->
 
-		<div id="aside">
-			<h2>회원</h2>
-			<ul>
-				<li>회원정보</li>
-				<li>로그인</li>
-				<li>회원가입</li>
-			</ul>
-		</div>
+		<jsp:include page="/WEB-INF/views/include/asideUser.jsp"></jsp:include>
 		<!-- //aside -->
-
+		
+	
 		<div id="content">
 			
 			<div id="content-head">
-            	<h3>로그인</h3>
+            	<h3><a href="/mysite2/user?action=loginForm">로그인</a></h3>
             	<div id="location">
             		<ul>
-            			<li>홈</li>
+            			<li><a href="/mysite2/main">홈</a></li>
             			<li>회원</li>
-            			<li class="last">로그인</li>
+            			<li class="last"><a href="/mysite2/user?action=loginForm">로그인</a></li>
             		</ul>
             	</div>
                 <div class="clear"></div>
@@ -99,9 +93,7 @@
 		<!-- //content  -->
 		<div class="clear"></div>
 
-		<div id="footer">
-			Copyright ⓒ 2020 황일영. All right reserved
-		</div>
+		<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 		<!-- //footer -->
 
 	</div>

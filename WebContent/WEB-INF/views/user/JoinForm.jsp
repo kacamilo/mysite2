@@ -40,14 +40,7 @@
 		</div>
 		<!-- //nav -->
 
-		<div id="aside">
-			<h2>회원</h2>
-			<ul>
-				<li>회원정보</li>
-				<li>로그인</li>
-				<li>회원가입</li>
-			</ul>
-		</div>
+		<jsp:include page="/WEB-INF/views/include/asideUser.jsp"></jsp:include>
 		<!-- //aside -->
 
 		<div id="content">
@@ -56,9 +49,9 @@
             	<h3>회원가입</h3>
             	<div id="location">
             		<ul>
-            			<li>홈</li>
+            			<li><a href="/mysite2/main">홈</a></li>
             			<li>회원</li>
-            			<li class="last">회원가입</li>
+            			<li class="last"><a href="/mysite2/user?action=joinForm">회원가입</a></li>
             		</ul>
             	</div>
                 <div class="clear"></div>
@@ -124,9 +117,7 @@
 		<!-- //content  -->
 		<div class="clear"></div>
 		
-		<div id="footer">
-			Copyright ⓒ 2020 황일영. All right reserved
-		</div>
+	<jsp:include page="/WEB-INF/views/include/footer.jsp"></jsp:include>
 		<!-- //footer -->
 
 	</div>

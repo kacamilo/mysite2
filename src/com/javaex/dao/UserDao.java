@@ -120,41 +120,70 @@ public class UserDao {
 			return vo;
 		}
 		//회원 수정
-		//로그인한 사용자 가져오기
-			public UserVo getModify(String id, String password, String name, String gender) {
-				UserVo vo = null;
-				
-				getConnection();
-				try {
-					// 3. SQL문 준비 / 바인딩 / 실행
-					String query = ""; // 쿼리문 문자열만들기, ? 주의
-					query += " select no, id, password, name, gender ";
-					query += " from users ";
-					query += " where id= ? ";
-					query += " and password = ? ";
-					query += " and name = ? ";
-					query += " and gender = ? ";
-		
-					// System.out.println(query);
-					
-					pstmt = conn.prepareStatement(query); // 쿼리로 만들기
-					pstmt.setString(1, id);		// ?(물음표) 중 1번째, 순서중요
-					pstmt.setString(2, password);		// ?(물음표) 중 2번째, 순서중요
-					pstmt.setString(3, name);		// ?(물음표) 중 3번째, 순서중요
-					pstmt.setString(4, gender);		// ?(물음표) 중 4번째, 순서중요
-					
-					
-					rs = pstmt.executeQuery();
-					
-					
-					
-				} catch (SQLException e) {
-					System.out.println("error:" + e);
-				}
+		// 로그인한 사용자 가져오기
+		   public UserVo getUser(int no) {
+		      UserVo vo = null ;
+		      
+		      getConnection();
+		      
+		      try {
+		         String query = ""; // 쿼리문 문자열만들기, ? 주의
+		            query += " select no, id, password, name, gender ";
+		            query += " from users ";
+		            query += " where no = ?";
+		            
+		            pstmt = conn.prepareStatement(query); // 쿼리로 만들기
+		            
+		            pstmt.setInt(1, no); // ?(물음표) 중 1번째, 순서중요
+		         
+		            rs = pstmt.executeQuery();
+		            
+		            //4.결과처리
+		            while(rs.next()) {
+		               int rNo = rs.getInt("no");
+		               String id = rs.getString("id");
+		               String password = rs.getString("password");
+		               String name = rs.getString("name");
+		               String gender = rs.getString("gender");
+		               
+		               vo = new UserVo(rNo, id, password, name, gender);
+		            }
+		      
+		      } catch (SQLException e) {
+		         System.out.println("error:" + e);
+		      }
+
 				close();
 				return vo;
 	
 			}	
+		   
+		   public int update(UserVo vo) {
+			   int count = 0;
+			   getConnection();
+			   try {
+				   String query = "update users set name = ?,"
+							   		+ " password = ?, "
+							   		+ "gender = ? "
+							   		+ "where no = ?";
+		            
+		            pstmt = conn.prepareStatement(query);
+		            
+		            pstmt.setString(1, vo.getName());
+		            pstmt.setString(2, vo.getPassword());
+		            pstmt.setString(3, vo.getGender());
+		            pstmt.setInt(4, vo.getNo());
+		            
+		            count = pstmt.executeUpdate();
+				   
+			   } catch (SQLException e) {
+			         System.out.println("error:" + e);
+			      }
+			   
+			   close();
+			   
+			   return count;
+		   }
 	}
 	
 	
